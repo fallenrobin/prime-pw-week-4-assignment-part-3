@@ -5,38 +5,44 @@ let basket = []
 
 function addItem(item) {
   basket.push(item);
-  //console.log(`Inside 'addItem'`);//how do I add the "item" so it logs from inside the function?
+  console.log(`Inside 'addItem'`+item);//figured it out=>how do I add the "item" so it logs from inside the function?
   return true;
 }
-addItem('banana');
+addItem('a banana');
 
 console.log(`Basket is ${basket}`);
-console.log('Adding banana (expect true)', addItem());//how can I stop this from pushing Undefined to the array?
+console.log('Adding hot dogs (expect true)', addItem('some hot dogs'));//how can I stop this from pushing Undefined to the array?
+console.log(`Basket is now ${basket}`);
+addItem(`a bag of tater tots`);
+addItem(`a bottle of ranch`);
 console.log(`Basket is now ${basket}`);
 
-addItem(`tater tots`);
-addItem(`ranch`);
 
-console.log(`Basket is now ${basket}`);
-
-
-function listItems(){
+function listItems(array){
   //console.log(`inside listItems`);
-  for (i = 0; i < basket.length; i++) {
-    console.log(`'You have' ${basket[i]} 'in your basket.'`);
+  for (i = 0; i < array.length; i++) {
+    console.log(`You have ${basket[i]} in your basket.`);
+    //return (array[i]);//<=using this limits the log to the first item... why?
+    //return true; same issue^
+    //return [i]; same issue^
+    //return array; //same issue^
   }
 }
-listItems();
+listItems(basket);
 
+function empty(array){
+  console.log(`Basket has been emptied.`);//the console.log works up here
+  //console.log(`inside empty`);
+  return array.length = 0;
+  //So, does the Return have to be the last thing in a function??
+  //console.log(`Basket is now`, basket);//this won't work if after the Return
+}
 
+empty(basket);
+//console.log(`The basket has ${basket}items`);// This prints as The basket has items
+console.log(basket);
 
-
-
-
-//
-// - Create a function called `listItems`. It should:
-//   - loop over the items in the `basket` array
-//   - console.log each individual item on a new line
-//
-// - Create a function called `empty`. It should:
-//   - reset the `basket` to an empty array
+addItem('kale');
+console.log(`Basket is now ${basket}`);
+empty(basket);
+listItems(basket);
