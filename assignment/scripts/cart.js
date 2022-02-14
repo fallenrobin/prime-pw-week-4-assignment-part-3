@@ -7,8 +7,9 @@ function addItem(item) {
   basket.push(item);
   //console.log(`Inside 'addItem'`+item);//figured it out=>how do I add the "item" so it logs from inside the function?
   return true;
-}
-addItem('a banana');
+}//I just realized it would be better to use (item, array) as my parameters and not just basket! But in this instance it's ok.
+
+addItem('a banana';
 
 console.log(`Basket is ${basket}`);
 console.log('Adding hot dogs (expect true)', addItem('some hot dogs'));//how can I stop this from pushing Undefined to the array?
@@ -75,7 +76,22 @@ isFull(basket);
 //   - If there was no room and the item could not be added return `false`
 //
 // __Using Array built-in functions!__
+
+//DRAFT OF SLACK DISCUSSION TOPIC
+// let groceries = ['eggs','bacon','potatoes','bread']
+// let plateOfFood = []
 //
+// function cook(ingredients){
+//   for //(loop thru all ingredients){
+//     //do something to each ingredient according to the recipe;
+//     plateOfFood.push(ingredients[i]);//ingredients will have been prepared before push
+//     //} end loop
+//     return plateOfFood;
+//   }//end cook
+// cook(groceries);
+// console.log(`Enjoy your ${plateOfFood}!`);
+
+
 // 4. Create a function called `removeItem`. It should:
 //   - Take an input parameter for a string `item`
 //   - Use [Array.indexOf](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf) to find the index of the first matching item in the basket.
